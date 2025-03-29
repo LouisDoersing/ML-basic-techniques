@@ -27,7 +27,7 @@ prediction_Two = [4, 14, 5, 10, 12000, 3, 3, .28, 1, 5, 1, 2, 10000, 1]
 prediction_One_Reshape = np.array(prediction_One).reshape(1, -1)
 prediction_Two_Reshape = np.array(prediction_Two).reshape(1, -1)
 
-#normalize prediction
+#denormalize prediction
 predictionOne_scaled = scaler.transform(prediction_One_Reshape)
 predictionTwo_scaled = scaler.transform(prediction_Two_Reshape)
 
@@ -42,7 +42,7 @@ print("Prediction Two cluster:", predicted_cluster_two)
 
 
 
-#Visualisierung
+#Visualization
 # reduction from 14D to 2D with PCS for visualization
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(scaledX)
